@@ -1,5 +1,5 @@
 import { NextComponentType } from "next";
-import {StyledHero, HeroTitles, Tech, Zone, Cards, Browse} from "./styledHero";
+import {StyledHero, HeroTitles, Tech, Zone, Cards, Card} from "./styledHero";
 
 const Hero: NextComponentType = () => {
     return(
@@ -23,21 +23,45 @@ const Hero: NextComponentType = () => {
                         <img src="/Vector2.png"/>
                     </button>
                 </HeroTitles>    
-                <img src="/Saly-19.png"/>
+                <img src="/Illustration.png"/>
                 <Cards>
 
                 </Cards>
             </div>
             <Cards>
-                <Browse>
+                <Card rotate="-3deg">
                     <img src="/Saly-1.png"/>
                     <div>
-                        <img src="/browse-icon.png"/>
                         <h1>
-                            1-Browse
+                            <img src="/browse-icon.png"/>1--Browse
                         </h1>
+                        <p>
+                            Browse our tech catalog with more than 20 top tech products
+                        </p>
                     </div>
-                </Browse>
+                </Card>
+                <Card rotate="0deg">
+                <img src="/Saly-31.png"/>
+                    <div>
+                        <h1>
+                            <img src="/choose-icon.png"/>2--Choose
+                        </h1>
+                        <p>
+                            Exchange your hard earned AeroPoints for the item you want
+                        </p>
+                    </div>
+                </Card>
+                <Card rotate="3deg">
+                <img src="/Saly-10.png"/>
+                    <div>
+                        <h1>
+                            <img src="/enjoy-icon.png"/>3--Enjoy
+                        </h1>
+                        <p>
+                            All done, you can relax! We’ll take care of delivery of your tech item!
+                        </p>
+                    </div>
+                </Card>
             </Cards>
         </StyledHero>
     )

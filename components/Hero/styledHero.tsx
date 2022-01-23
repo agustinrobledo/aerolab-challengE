@@ -76,41 +76,54 @@ export const Cards = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    background: linear-gradient(102.47deg, #94B8F6 -5.34%, #E8BEFD 106.58%);
+    background-size: 100% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
 `;
 
-export const Browse = styled.div`
+export const Card = styled.div<{rotate:string}>`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background-color: #fff;
     border: 1px solid #DAE4F2;
     padding: 1rem;
     box-sizing: border-box;
     border-radius: 2rem;
     width: 25%;
-    transform: rotate(-3deg);
+    transform: rotate(${props => props.rotate});
     img{
-        background: linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%);
+        background: linear-gradient(102.47deg, #839CEA -5.34%, #E8BEFD 106.58%);
         border-radius: 2rem;
-    }
-    h1{
-        font-size: 2rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        background: -webkit-linear-gradient(to right, #2670EC, #CC7CFA);
-        background: linear-gradient(to right, #2670EC, #CC7CFA);
-        -webkit-background-clip: text; 
-        -webkit-text-fill-color: transparent;
     }
     div{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         margin-top: 1rem;
-        img{
-            width: 30px;
-            height: 30px;
-            border: none;
-            background: none;
-            border-radius: none;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+            h1{
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(to right, #2670EC, #CC7CFA);
+            background: linear-gradient(to right, #2670EC, #CC7CFA);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            img{
+                margin-right: 0.5rem;
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: none;
+                border-radius: none;
+            }
+            p{
+                width: 100%;
+            }
         }
     }
 `;
