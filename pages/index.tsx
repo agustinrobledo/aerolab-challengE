@@ -1,10 +1,36 @@
 import type { NextPage } from 'next'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import GlobalStyle from '../styles/global'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-const Home: NextPage = () => {
+import Products from '../components/Products'
+
+export interface ProductInterface {
+  img: {
+    url: string;
+    hdUrl: string;
+  }
+  _id: string;
+  name: string;
+  cost: number;
+  category: string;
+}
+
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const token = process.env.token
+  const response = await fetch(`https://coding-challenge-api.aerolab.co/products?token=${token}`)
+  const data = await response.json()
+  return {
+    props: {
+      products: data
+    }
+  }
+}
+
+export default function Home ({ products }: { products: [ProductInterface] }): JSX.Element{
   return (
     <>
     <div>
@@ -16,6 +42,7 @@ const Home: NextPage = () => {
       <Navbar />
       <main>
         <Hero/>
+        <Products products={products}/>
       </main>
       <footer>
         <a
@@ -35,4 +62,5 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+
+
